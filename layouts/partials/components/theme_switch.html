@@ -1,0 +1,26 @@
+<style>
+    html {
+        color-scheme: light;
+        color: #1b1c18;
+        background-color: #fdfcf5;
+    }
+
+    html.dark {
+        color-scheme: dark;
+        color: #e3e3db;
+        background-color: #0F172A;
+    }
+</style>
+
+<script>
+    function setTheme() {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    }
+    setTheme();
+
+    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setTheme);
+</script>

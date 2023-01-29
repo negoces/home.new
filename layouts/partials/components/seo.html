@@ -1,0 +1,3 @@
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.Summary }}{{ else }}{{ .Summary }}{{ end }}">
+<meta name="keywords"
+    content="{{ if .IsHome }}{{ range .Site.Params.Keywords }}{{ . }},{{end}}{{ else }}{{ .Keywords }}{{ end }}">

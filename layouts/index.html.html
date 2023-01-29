@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 max-w-4xl w-full p-6">
+    <span class="block text-center py-6 text-6xl font-extrabold text-rose-500 dark:text-rose-400">{{ .Title }}</span>
+    <p class="text-lg py-6 text-slate-600 dark:text-slate-400">{{ .Site.Params.Summary }}</p>
+    <div class="mt-6 flex justify-center items-center">
+        <a class="bg-slate-900 hover:bg-slate-700 text-white font-semibold h-12 px-6 rounded-lg w-auto flex items-center justify-center dark:bg-rose-500 dark:highlight-white/20 dark:hover:bg-rose-400"
+            href="/posts">浏览文章 &rarr;</a>
+    </div>
+</div>
+{{ end }}

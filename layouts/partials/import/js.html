@@ -1,0 +1,4 @@
+{{ $js := resources.Match "js/**.js" }}
+{{ $js = $js | resources.Concat "js/all.js" }}
+{{ $js = $js | minify | resources.Fingerprint .Site.Params.sri_method }}
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

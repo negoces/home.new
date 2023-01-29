@@ -1,0 +1,72 @@
+baseURL: "https://negoces.top/"
+title: "negoces の 博客"
+timeZone: "Asia/Shanghai"
+languageCode: "zh-CN"
+enableGitInfo: true
+#enableInlineShortcodes: true
+enableRobotsTXT: true
+hasCJKLanguage: true
+copyright: negoces
+
+paginate: 0
+summaryLength: 64
+
+sitemap:
+    changefreq: weekly
+    filename: sitemap.xml
+    priority: 0.5
+
+permalinks:
+    posts: /posts/:slug/
+
+menu:
+    main:
+        - name: "主页"
+          url: /
+          weight: -100
+        - name: "文章"
+          url: /posts/
+          weight: -90
+        - name: "关于"
+          url: /about/
+          weight: 10
+        - name: "友链"
+          url: /friends/
+          weight: 10
+
+params:
+    repoName: git.negoces.top/negoces/homepage
+    author: negoces
+    selfTags:
+        - Student
+        - Arch Linux User
+        - Developers
+    Summary: 人最重要的特点是会思考，写博客的初衷是保存思维的电子快照。 当然各种文档工具亦或是简单的文本编辑器也能随时记录点滴，选择建个人网站无非是想满足技术爱好者的偏执。
+    Keywords:
+        - blog
+        - negoces
+    social:
+        - name: GitHub
+          url: https://github.com/negoces/
+          icon: fa-brands fa-github
+        - name: E-Mail
+          url: "mailto:nego@negoces.top"
+          icon: fa-solid fa-envelope
+    sri_method: sha384
+
+disableKinds:
+    - "RSS"
+
+markup:
+    # 语法高亮列表：https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages
+    highlight:
+        anchorLineNos: false
+        codeFences: true
+        guessSyntax: true
+        hl_Lines: ""
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: false
+        noClasses: false
+        style: monokai
+        tabWidth: 4
