@@ -6,7 +6,7 @@ enableGitInfo: true
 #enableInlineShortcodes: true
 enableRobotsTXT: true
 hasCJKLanguage: true
-copyright: negoces
+copyright: negoces · CC BY-NC-SA 4.0
 
 paginate: 0
 summaryLength: 64
@@ -17,7 +17,7 @@ sitemap:
     priority: 0.5
 
 permalinks:
-    posts: /posts/:slug/
+    posts: /posts/:slug/·
 
 menu:
     main:
