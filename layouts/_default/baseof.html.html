@@ -15,9 +15,9 @@
 </head>
 
 
-<body class="h-screen flex flex-col bg-white dark:bg-slate-900 isolate">
+<body class="h-screen flex flex-col bg-white dark:bg-slate-900 isolate transition-colors">
     {{ partial "components/header.html" . }}
-    <main id="main" class="flex-auto">
+    <main id="main" class="flex-auto flex justify-center">
         {{ block "main" . }}{{ end }}
     </main>
     {{ partial "components/footer.html" . }}
