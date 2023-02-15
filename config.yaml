@@ -18,7 +18,7 @@ sitemap:
     priority: 0.5
 
 permalinks:
-    posts: /posts/:slug/·
+    posts: /posts/:slug
 
 menu:
     main:
