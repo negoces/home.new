@@ -12,7 +12,8 @@ paginate: 0
 summaryLength: 64
 
 sitemap:
-    changefreq: weekly
+    # changefreq: weekly
+    changefreq: hourly
     filename: sitemap.xml
     priority: 0.5
 

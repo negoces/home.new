@@ -7,15 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ hugo.Generator }}
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    {{ partial "components/seo.html" . }}
+    {{ block "seo" . }}{{ end }}
     {{ partial "components/noscript.html" . }}
     {{ partial "components/theme_switch.html" . }}
-    {{/* partial "import/normalize.html" . }}
-    {{ partial "import/layouts.html" . */}}
     {{ partial "import/tailwindcss.html" . }}
     {{ partial "import/js.html" . }}
-    {{/* partial "import/material3.html" . }}
-    {{ partial "import/googlefonts.html" . */}}
 </head>
 
 

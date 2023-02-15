@@ -1,3 +1,8 @@
+{{ define "seo" }}
+<meta name="description" content="{{ .Site.Params.Summary }}">
+<meta name="keywords" content="{{ delimit .Site.Params.Keywords ", " }}">
+{{ end }}
+
 {{ define "main" }}
 <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 max-w-4xl w-full p-6">
     <span class="block text-center py-6 text-6xl font-extrabold text-rose-500 dark:text-rose-400">{{ .Title }}</span>
