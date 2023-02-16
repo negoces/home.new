@@ -83,7 +83,10 @@ console.debug("当前位置：", window.location.pathname);
 const a_tiems = document.getElementsByClassName("router-items");
 for (var i = 0; i < a_tiems.length; i++) {
     const element = a_tiems.item(i);
-    if (element.href === document.URL) {
+    if (
+        element.href === document.URL ||
+        document.URL.indexOf(element.href + "page/") == 0
+    ) {
         element.classList.add("text-rose-500");
         element.classList.add("dark:text-rose-400");
         element.classList.add("bg-rose-400/10");
