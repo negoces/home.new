@@ -1,7 +1,8 @@
 {{ define "main" }}
 <div class="max-w-4xl w-full p-4">
-    {{ range ( where .Site.RegularPages "Section" "posts" ) }}<a
-        class="block rounded-xl border-2 border-slate-200 dark:border-slate-800 text-lg text-slate-600 dark:text-slate-400 bg-white/50 dark:bg-slate-900/50 hover:border-rose-500 dark:hover:border-rose-400 transition-colors overflow-hidden"
+    {{ $pages := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+    {{ range $pages.Pages }}<a
+        class="block rounded-xl border-2 mb-2 border-slate-200 dark:border-slate-800 text-lg text-slate-600 dark:text-slate-400 bg-white/50 dark:bg-slate-900/50 hover:border-rose-500 dark:hover:border-rose-400 transition-colors overflow-hidden"
         href="{{ .RelPermalink }}">
         {{ if .Params.cover }}<img class="w-full" src="{{ .RelPermalink }}{{ .Params.cover }}" alt="cover">{{end}}
         <div class="p-4 border-t border-slate-900/10 dark:border-slate-300/10">
@@ -58,5 +59,44 @@
             <div class="text-right text-base font-medium pt-1 text-rose-500 dark:text-rose-400">阅读全文 &rarr;</div>
         </div>
     </a>{{ end }}
+
+    {{ with .Paginator }}
+    {{- $currentPageNumber := .PageNumber }}
+
+    {{- $slots := 5 }}
+    {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+    {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+    {{- if lt (add (sub $end $start) 1) $slots }}
+    {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+    {{- end }}
+
+    <div class="flex justify-center py-4 text-sm font-medium">
+        <nav class="inline-flex" aria-label="Pagination">
+            {{ with .Prev }}
+            <a href="{{ .URL }}" aria-label="Previous" role="button"
+                class="mx-1 w-10 text-center py-2 rounded-md transition-colors hover:bg-rose-400/10">
+                &larr;
+            </a>
+            {{ end }}
+
+            {{ range $num := seq $start $end }}
+            {{ if eq $.Paginator.PageNumber $num }}
+            <a aria-current="page"
+                class="mx-1 w-10 text-center py-2 rounded-md bg-rose-400/10 text-rose-500 dark:text-rose-400">{{ $num
+                }}</a>
+            {{ else }}
+            <a href="{{ (index $.Paginator.Pagers (sub $num 1)).URL }}"
+                class="mx-1 w-10 text-center py-2 rounded-md transition-colors hover:bg-rose-400/10">{{ $num }}</a>
+            {{ end }}
+            {{ end }}
+
+            {{ with .Next }}<a href="{{ .URL }}" aria-label="Next" role="button"
+                class="mx-1 w-10 text-center py-2 rounded-md transition-colors hover:bg-rose-400/10">
+                &rarr;
+            </a>
+            {{ end }}
+        </nav>
+    </div>
+    {{ end }}
 </div>
 {{ end }}
