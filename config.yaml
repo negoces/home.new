@@ -6,7 +6,7 @@ enableGitInfo: true
 #enableInlineShortcodes: true
 enableRobotsTXT: true
 hasCJKLanguage: true
-copyright: negoces · CC BY-NC-SA 4.0
+copyright: CC BY-NC-SA 4.0
 GoogleAnalytics: G-Y8WFSWBFMV
 
 paginate: 8
@@ -38,7 +38,7 @@ menu:
 
 params:
     repoName: git.negoces.top/negoces/homepage
-    author: negoces
+    Author: negoces
     selfTags:
         - Student
         - Arch Linux User
