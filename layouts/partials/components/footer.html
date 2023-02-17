@@ -3,10 +3,8 @@
     {{ else }}
     <footer class="text-slate-700 dark:text-slate-300 bg-white dark:bg-gray-800 transition-colors">
         {{ end}}
-        <div
-            class="text-sm font-normal mx-auto max-w-7xl px-2 py-3 sm:px-6 lg:px-8 flex items-center justify-center text-center">
-            Copyright © {{ dateFormat "2006" now }} {{ .Site.Params.Author }}<br />
-            {{ .Site.Copyright}}<br />
-            hugo {{ hugo.Version }}
+        <div class="mx-auto max-w-7xl text-base font-normal p-4 flex items-center justify-between">
+            <div>Copyright © {{ dateFormat "2006" now }} {{ .Site.Params.Author }}</div>
+            <div>hugo {{ hugo.Version }}</div>
         </div>
     </footer>
