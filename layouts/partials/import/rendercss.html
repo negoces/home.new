@@ -1,0 +1,3 @@
+{{ $css := resources.Get "css/render.css" }}
+{{ $css = $css | minify | resources.Fingerprint .Site.Params.sri_method }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

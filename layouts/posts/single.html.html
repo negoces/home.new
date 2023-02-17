@@ -1,0 +1,17 @@
+{{ define "seo" }}
+<meta name="description" content="{{ .Summary }}">
+<meta name="keywords" content="{{ delimit .Params.tags ", " }}">
+{{ end }}
+
+{{ define "main" }}
+<div class="max-w-4xl w-full p-4">
+    <div
+        class="rounded-md border mb-2 border-slate-200 dark:border-slate-800 text-lg text-slate-600 dark:text-slate-400 bg-white/50 dark:bg-slate-900/50">
+        <span
+            class="block rounded-t-md sticky top-0 p-3 border-b border-slate-200/50 dark:border-slate-800/50 text-xl font-bold text-rose-500 dark:text-rose-400 backdrop-blur-3xl">
+            {{ .Title }}
+        </span>
+        <article id="article" class="p-3">{{ .Content }}</article>
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,238 @@
+/* Color */
+article {
+    --code-bg: rgb(0 0 0/.1);
+    --rose: rgb(244 63 94);
+}
+
+html.dark article {
+    --code-bg: rgb(255 255 255/.1);
+    --rose: rgb(251 113 133);
+}
+
+/* Global */
+article {
+    overflow-wrap: break-word;
+}
+
+/* Margin */
+article>* {
+    margin-bottom: 1.25rem;
+}
+
+/* Paragraph */
+
+/* Table */
+article th,
+article td {
+    border-width: 1px;
+    padding: .25rem 1rem;
+}
+
+/* List */
+article ol,
+article ul {
+    margin-left: 2rem;
+}
+
+article ol>li {
+    list-style: decimal;
+}
+
+article ul>li {
+    list-style: disc;
+}
+
+/* Quote */
+article blockquote {
+    border-left-width: .25rem;
+    border-left-color: rgb(244 63 94);
+    background-color: rgb(244 63 94/.2);
+    padding: .5rem 1rem;
+    margin: .25rem 0;
+}
+
+article blockquote>* {
+    margin-bottom: 1.25rem;
+}
+
+article blockquote *:last-child {
+    margin-bottom: .25rem;
+}
+
+/* Title */
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+    color: var(--rose);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+article h2::before {
+    content: "# ";
+}
+
+article h3::before {
+    font-size: 1.125rem;
+    content: "## ";
+}
+
+article h4::before {
+    font-size: 1rem;
+    content: "### ";
+}
+
+article h5::before {
+    font-size: .875rem;
+    content: "#### ";
+}
+
+article h6::before {
+    font-size: .75rem;
+    content: "##### ";
+}
+
+/* Code Block */
+article pre {
+    margin: .25rem 0;
+}
+
+/* Inline Code */
+article p>code,
+article li>code {
+    padding: .125rem .375rem;
+    border-radius: .25rem;
+    background-color: var(--code-bg);
+}
+
+/* Code Highlight */
+.chroma {
+    overflow: auto;
+    border-radius: 8px;
+    padding: .25rem 1rem;
+    color: #f8f8f2;
+    background-color: #282a36;
+}
+
+.chroma .err {
+    color: #960050;
+    background-color: #1e0010
+}
+
+.chroma .lntd {
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.chroma .lntable {
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.chroma .hl {
+    background-color: #ffffcc
+}
+
+.chroma .lnt {
+    white-space: pre;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: #7f7f7f
+}
+
+.chroma .ln {
+    white-space: pre;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: #7f7f7f
+}
+
+.chroma .line {
+    display: flex;
+}
+
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt,
+.chroma .no {
+    color: #66d9ef
+}
+
+.chroma .na,
+.chroma .nc,
+.chroma .nd,
+.chroma .ne,
+.chroma .nf,
+.chroma .nx,
+.chroma .gi {
+    color: #a6e22e
+}
+
+.chroma .kn,
+.chroma .nt,
+.chroma .o,
+.chroma .ow,
+.chroma .gd {
+    color: #f92672
+}
+
+.chroma .l,
+.chroma .se,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+    color: #ae81ff
+}
+
+.chroma .ld,
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss {
+    color: #e6db74
+}
+
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf,
+.chroma .gu {
+    color: #75715e
+}
+
+.chroma .ge {
+    font-style: italic
+}
+
+.chroma .gs {
+    font-weight: bold
+}
