@@ -2,11 +2,13 @@
 article {
     --code-bg: rgb(0 0 0/.1);
     --rose: rgb(244 63 94);
+    --code-block-bg: #282a36;
 }
 
 html.dark article {
     --code-bg: rgb(255 255 255/.1);
     --rose: rgb(251 113 133);
+    --code-block-bg: #363F4B;
 }
 
 /* Global */
@@ -14,9 +16,13 @@ article {
     overflow-wrap: break-word;
 }
 
-/* Margin */
-article>* {
-    margin-bottom: 1.25rem;
+/* Link */
+article a {
+    color: #47a2e0;
+}
+
+article a:hover {
+    text-decoration: underline;
 }
 
 /* Paragraph */
@@ -48,15 +54,11 @@ article blockquote {
     border-left-color: rgb(244 63 94);
     background-color: rgb(244 63 94/.2);
     padding: .5rem 1rem;
-    margin: .25rem 0;
 }
 
-article blockquote>* {
-    margin-bottom: 1.25rem;
-}
-
-article blockquote *:last-child {
-    margin-bottom: .25rem;
+article blockquote> :not([hidden])~ :not([hidden]) {
+    margin-top: calc(0.75rem * calc(1 - 0));
+    margin-bottom: calc(0.75rem * 0);
 }
 
 /* Title */
@@ -112,10 +114,10 @@ article li>code {
 /* Code Highlight */
 .chroma {
     overflow: auto;
-    border-radius: 8px;
+    border-radius: .375rem;
     padding: .25rem 1rem;
     color: #f8f8f2;
-    background-color: #282a36;
+    background-color: var(--code-block-bg);
 }
 
 .chroma .err {
