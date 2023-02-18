@@ -19,6 +19,7 @@ sitemap:
 
 permalinks:
     posts: /posts/:slug
+    page: /:slug
 
 menu:
     main:
@@ -28,12 +29,15 @@ menu:
         - name: "文章"
           url: /posts/
           weight: -90
-        - name: "关于"
-          url: /about/
-          weight: 10
-        - name: "友链"
-          url: /friends/
-          weight: 10
+        # - name: "关于"
+        #   url: /about/
+        #   weight: 10
+        # - name: "友链"
+        #   url: /friends/
+        #   weight: 20
+        # - name: "搜索"
+        #   url: /search/
+        #   weight: 30
 
 params:
     repoName: git.negoces.top/negoces/homepage
