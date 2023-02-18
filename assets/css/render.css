@@ -111,11 +111,32 @@ article li>code {
     background-color: var(--code-bg);
 }
 
+/* Code Copy Button */
+div.chroma {
+    position: relative;
+}
+
+button.copy-btn {
+    position: absolute;
+    top: .25rem;
+    right: .25rem;
+    padding: .25rem;
+    opacity: 0.5;
+}
+
+button.copy-btn:hover {
+    opacity: 1;
+}
+
 /* Code Highlight */
+div.highlight {
+    margin: .25rem 0;
+}
+
 .chroma {
     overflow: auto;
     border-radius: .375rem;
-    padding: .25rem 1rem;
+    padding: .25rem .25rem;
     color: #f8f8f2;
     background-color: var(--code-block-bg);
 }
