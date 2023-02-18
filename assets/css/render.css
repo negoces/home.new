@@ -16,6 +16,15 @@ article {
     overflow-wrap: break-word;
 }
 
+/* ToC */
+nav#TableOfContents li ul {
+    margin-left: 1rem;
+}
+
+nav#TableOfContents li {
+    margin: .175rem 0;
+}
+
 /* Link */
 article a {
     color: #47a2e0;

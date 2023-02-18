@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="max-w-4xl w-full text-slate-700 dark:text-slate-300">
-    <div class="space-y-3 p-3">
+<div class="max-w-4xl w-full m-3 text-slate-700 dark:text-slate-300">
+    <div class="space-y-3 mb-3">
         {{ $pages := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
         {{ range $pages.Pages }}<a
             class="block rounded-md border text-lg bg-white dark:bg-gray-800 border-rose-500/0 hover:border-rose-500 dark:hover:border-rose-400 transition-colors overflow-hidden"
@@ -64,7 +64,7 @@
     {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
     {{- end }}
 
-    <div class="flex justify-center pb-4 text-sm font-medium">
+    <div class="flex justify-center text-sm font-medium">
         <nav class="inline-flex" aria-label="Pagination">
             {{ with .Prev }}
             <a href="{{ .URL }}" aria-label="Previous" role="button"
