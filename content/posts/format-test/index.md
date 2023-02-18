@@ -3,7 +3,7 @@ title: "Format Test"
 date: 2023-02-17T16:20:23+08:00
 slug: d95a27f7
 #cover: "cover.png"
-tags: [Test, Markdown, CSS]
+tags: [Test, Markdown, CSS, 测试, 中文标签]
 categories: [Test]
 ---
 

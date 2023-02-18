@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="max-w-4xl w-full text-slate-700 dark:text-slate-300">
+    <div class="space-y-3 p-3">
+        <div class="text-xl text-rose-500 dark:text-rose-400">{{ .Type | humanize }}: {{ .Data.Term }}</div>
+        <ul class="mx-8">
+            {{ range .Data.Pages }}<li class="list-disc">
+                <a href="{{ .Permalink }}" class="text-sky-600 hover:underline">
+                    {{ .Date.Format "2006-01-02" }} ・ {{ .Title }}
+                </a>
+            </li>{{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}
