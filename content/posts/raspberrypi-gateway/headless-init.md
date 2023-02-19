@@ -3,7 +3,7 @@ title: "树莓派旁路由「一」：无头初始化"
 date: 2023-02-19T11:12:54+08:00
 slug: 6f8416c8
 #cover: "cover.png"
-tags: [RaspberryPi, Headless, Mirror]
+tags: [Raspberry Pi, Headless, Mirror]
 categories: "树莓派网关"
 ---
 
