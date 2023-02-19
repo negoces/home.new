@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="max-w-4xl w-full m-3 text-slate-700 dark:text-slate-300">
     <div class="space-y-3 mb-3">
-        {{ $pages := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+        {{ $pages := .Paginate ( .Site.RegularPages ) }}
         {{ range $pages.Pages }}<a
             class="block rounded-md border text-lg bg-white dark:bg-gray-800 border-rose-500/0 hover:border-rose-500 dark:hover:border-rose-400 transition-colors overflow-hidden"
             href="{{ .RelPermalink }}">
@@ -36,16 +36,17 @@
                                 d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z"
                                 clip-rule="evenodd" />
                         </svg>
-                        <span>{{ .Lastmod.Format "2006-01-02" }}
-                        </span>
-                        <span class="flex items-center"></span>
+                        <span>{{ .Lastmod.Format "2006-01-02" }}</span>
+                    </span>
+                    <span class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                             class="w-4 h-4 inline-block mx-2">
                             <path fill-rule="evenodd"
                                 d="M6.912 3a3 3 0 00-2.868 2.118l-2.411 7.838a3 3 0 00-.133.882V18a3 3 0 003 3h15a3 3 0 003-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0017.088 3H6.912zm13.823 9.75l-2.213-7.191A1.5 1.5 0 0017.088 4.5H6.912a1.5 1.5 0 00-1.434 1.059L3.265 12.75H6.11a3 3 0 012.684 1.658l.256.513a1.5 1.5 0 001.342.829h3.218a1.5 1.5 0 001.342-.83l.256-.512a3 3 0 012.684-1.658h2.844z"
                                 clip-rule="evenodd" />
                         </svg>
-                        <span>{{ delimit .Params.categories " " }}</span>
+                        {{/* <span>{{ delimit .Params.categories " " }}</span> */}}
+                        <span>{{ .Params.categories }}</span>
                     </span>
                 </div>
                 <div class="text-base font-medium">{{ .Summary | plainify }}</div>

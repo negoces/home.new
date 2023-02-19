@@ -16,6 +16,11 @@ article {
     overflow-wrap: break-word;
 }
 
+/* Title */
+#article-title::before {
+    content: " ・ ";
+}
+
 /* ToC */
 nav#TableOfContents li ul {
     margin-left: 1rem;

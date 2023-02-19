@@ -12,9 +12,12 @@
             </span>
             <div class="text-base px-4">
                 {{ with .GitInfo.AuthorName }}<span>{{ . }} ・ </span>{{ end }}
-                <span>{{ .Lastmod.Format "2006-01-02" }} ・ </span>
-                {{ range .Params.categories }}<a href="/categories/{{ . | urlize }}/"
-                    class="text-sky-400 hover:underline">{{ . }}</a>{{ end }}
+                <span>{{ .Lastmod.Format "2006-01-02" }}</span>
+                {{ with .Params.categories }}<span id="article-title">
+                    <a href="/categories/{{ . | urlize }}/" class="text-sky-400 hover:underline">
+                        {{ . }}
+                    </a>
+                </span>{{ end }}
             </div>
             <article id="article" class="space-y-3 px-4">{{ .Content }}</article>
             <div class="relative bg-stone-100 p-4 text-sm font-bold text-gray-700 overflow-hidden">
