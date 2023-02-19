@@ -16,7 +16,7 @@ CodeInner.forEach((codeBlock) => {
     const button = document.createElement("button");
     button.className = "copy-btn";
     button.type = "button";
-    button.title = "Copy";
+    button.title = "复制代码";
     button.innerHTML = IconCopy;
 
     button.addEventListener("click", () => {
