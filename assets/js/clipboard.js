@@ -31,6 +31,6 @@ CodeInner.forEach((codeBlock) => {
     });
 
     const divChroma =
-        codeBlock.parentNode.parentNode.parentNode.parentNode.parentNode;
+        codeBlock.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
     divChroma.parentNode.insertBefore(button, divChroma.nextSibling);
 });

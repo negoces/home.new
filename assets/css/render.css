@@ -126,19 +126,26 @@ article li>code {
 }
 
 /* Code Copy Button */
-div.chroma {
+div.highlight {
     position: relative;
 }
 
 button.copy-btn {
     position: absolute;
-    top: .25rem;
-    right: .25rem;
+    border-radius: .375rem;
+    top: .5rem;
+    right: .5rem;
     padding: .25rem;
-    opacity: 0.5;
+    background-color: rgb(209 213 219);
+    opacity: 0.6;
+}
+
+button.copy-btn>svg {
+    color: #323232;
 }
 
 button.copy-btn:hover {
+    background-color: rgb(245 245 244);
     opacity: 1;
 }
 
