@@ -142,6 +142,8 @@ button.copy-btn {
 
 button.copy-btn>svg {
     color: #323232;
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 button.copy-btn:hover {
