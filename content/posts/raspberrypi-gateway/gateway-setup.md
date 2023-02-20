@@ -44,6 +44,7 @@ Gateway = 172.16.0.1" | sudo tee /etc/systemd/network/01-eth0.network
 1. 在路由器管理页面，打开DHCP配置(**非上网设置**)
 2. 添加静态 IP 绑定，将树莓派的 IP 绑定为 172.16.0.2
 3. 将默认网关设置为树莓派IP，让所有局域网设备的出口流量都发送到树莓派
+4. 将DNS服务器设置为树莓派IP
 
 ## 使用 Nftables 验证
 
