@@ -1,0 +1,9 @@
+{
+    "name": "homepage",
+    "version": "rolling",
+    "private": true,
+    "scripts": {
+        "hugo": "./server.sh",
+        "css": "./tailwind.sh watch"
+    }
+}
