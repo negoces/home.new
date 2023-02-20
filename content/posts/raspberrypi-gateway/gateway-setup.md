@@ -46,7 +46,7 @@ Gateway = 172.16.0.1" | sudo tee /etc/systemd/network/01-eth0.network
 3. 将默认网关设置为树莓派IP，让所有局域网设备的出口流量都发送到树莓派
 4. 将DNS服务器设置为树莓派IP
 
-## 使用 Nftables 验证
+## 配置 Nftables
 
 安装:
 
@@ -61,18 +61,10 @@ sudo apt install nftables -y
 
 flush ruleset
 
-table inet filter {
-    chain input {
-        type filter hook input priority 0;
-    }
-
-    chain forward {
-        type filter hook forward priority 0;
-        counter
-    }
-
-    chain output {
-        type filter hook output priority 0;
+table ip nat {
+    chain postrouting {
+        type nat hook postrouting priority srcnat; policy accept;
+        oifname "eth*" ip saddr 172.16.0.0/16 ip daddr != 172.16.0.0/16 masquerade fully-random
     }
 }
 ```
@@ -87,16 +79,4 @@ sudo nft -f /etc/nftables.conf
 
 ```bash
 sudo systemctl enable nftables
-```
-
-查看统计:
-
-```bash
-$ sudo nft list ruleset
-...
-    chain forward {
-        type filter hook forward priority filter; policy accept;
-        counter packets 1185249 bytes 1461301729 # 不为0即为正常
-    }
-...
 ```
