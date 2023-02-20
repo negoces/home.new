@@ -24,7 +24,7 @@ BBR 是 Google 提出的一种新型拥塞控制算法，可以使 Linux 服务�
 2. 设置自动配置参数
 
     ```bash
-    echo "net.core.default_qdisc = cake
+    echo "net.core.default_qdisc = fq_codel
     net.ipv4.tcp_congestion_control = bbr" | \
     sudo tee /etc/sysctl.d/10-tcp_bbr.conf
     ```
@@ -42,12 +42,16 @@ sudo tee /etc/sysctl.d/10-tcp_fastopen.conf
 
 ## 开启数据包转发
 
-这也是作为网关的核心功能
+这也是作为网关的核心功能，以下参数来自 ChatGPT，未验证性能
 
 ```bash
 echo "net.ipv4.ip_forward = 1
-net.ipv6.conf.default.forwarding = 1
-net.ipv6.conf.all.forwarding = 1" | \
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
+net.ipv4.conf.all.rp_filter = 0
+net.ipv4.tcp_mtu_probing = 1" | \
 sudo tee /etc/sysctl.d/10-forward.conf
 ```
 
