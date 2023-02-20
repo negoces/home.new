@@ -18,7 +18,7 @@ BBR 是 Google 提出的一种新型拥塞控制算法，可以使 Linux 服务�
 1. 设置自动加载模块
 
     ```bash
-    echo "tcp_bbr" | sudo tee /etc/modules-load.d/tcpbbr.conf
+    echo "tcp_bbr" | sudo tee /etc/modules-load.d/tcp_bbr.conf
     ```
 
 2. 设置自动配置参数
@@ -53,11 +53,19 @@ sudo tee /etc/sysctl.d/10-forward.conf
 
 ## 设置最大连接数
 
-通过模块参数设置最大跟踪的连接数，为 hashsize 的8倍
+过大会导致转发速率大幅下降，来自网络的计算公式：`nf_conntrack_max = ram_size_bytes/16KB/2`
+
+树莓派内存为 8GB，得 `x = 8*((1024)^3)/(16*1024)/2` 得 `262144`
+
+模块加载:
 
 ```bash
-echo "options nf_conntrack hashsize=524288" | \
-sudo tee /etc/modprobe.d/nf_conntrack.conf
+echo "nf_conntrack" | sudo tee /etc/modules-load.d/nf_conntrack.conf
 ```
 
-使用 `sysctl` 修改则是修改 `net.netfilter.nf_conntrack_max` 条目
+持久化配置:
+
+```bash
+echo "net.netfilter.nf_conntrack_max = 262144" | \
+sudo tee /etc/sysctl.d/10-nf_conntrack.conf
+```
