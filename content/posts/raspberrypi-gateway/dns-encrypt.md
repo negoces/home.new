@@ -59,7 +59,7 @@ sudo systemctl restart unbound
 sudo journalctl -f -u unbound
 ```
 
-## 使用 Nftables 劫持内网 DNS ()
+## 使用 Nftables 劫持内网 DNS (仍需改进)
 
 编辑 `/etc/nftables.conf`
 
