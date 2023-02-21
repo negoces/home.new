@@ -51,7 +51,7 @@ categories: "树莓派网关"
 ## 卸载原有的网络管理
 
 ```bash
-sudo apt autopurge ifupdown dhcpcd5 dnsmasq-base isc-dhcp-client isc-dhcp-common -y
+sudo apt autopurge ifupdown dhcpcd5 dnsmasq-base isc-dhcp-client isc-dhcp-common network-manager -y
 ```
 
 ## 配置DNS
