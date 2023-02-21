@@ -99,14 +99,15 @@ aria2c -x 16 "https://mirrors.bfsu.edu.cn/raspberry-pi-os-images/raspios_lite_ar
     ssh user@172.16.0.2
     ```
 
-2. 更换镜像源: 修改 `/etc/apt/sources.list` 和 `/etc/apt/sources.list.d/raspi.list` 文件，添加镜像地址，可以将 `MIRROR_URL` 环境变量设置为自己喜欢的镜像源地址，一键脚本:
+2. 更换镜像源: 修改 `/etc/apt/sources.list` 和 `/etc/apt/sources.list.d/raspi.list` 文件，添加镜像地址，可以将 `MIRROR_URL` 环境变量设置为自己喜欢的镜像源地址，一键脚本: **(咱激进一点，直接用 testing 分支来获取更多功能，如果要使用稳定分支，修改第 2 行)**
 
     ```bash
-    sudo apt install ca-certificates
     export MIRROR_URL="https://mirrors.ustc.edu.cn"
-    echo "deb ${MIRROR_URL}/debian/ stable main contrib non-free
-    deb ${MIRROR_URL}/debian/ stable-updates main contrib non-free
-    deb ${MIRROR_URL}/debian-security/ stable-security main contrib non-free" | \
+    export BRANCH="testing" # or stable
+    sudo apt install ca-certificates
+    echo "deb ${MIRROR_URL}/debian/ ${BRANCH} main contrib non-free
+    deb ${MIRROR_URL}/debian/ ${BRANCH}-updates main contrib non-free
+    deb ${MIRROR_URL}/debian-security/ ${BRANCH}-security main contrib non-free" | \
     sudo tee /etc/apt/sources.list
     echo "deb ${MIRROR_URL}/raspberrypi/debian/ bullseye main" | \
     sudo tee /etc/apt/sources.list.d/raspi.list
