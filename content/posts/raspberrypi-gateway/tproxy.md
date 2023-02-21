@@ -9,9 +9,9 @@ categories: "树莓派网关"
 
 做旁路由的大部分目的都是为了透明代理
 
-虽然文章中用到了 Clash，但是只用到了它的自动切换节点功能，分流功能依旧由 Nftables 提供 *(理论上来说性能应该更好，但是没有测试过，目前已知 Clash 的规则命中需要 3~5ms，数据来自 Clash Premium 和 Clash Tracing)*，如果你的节点足够稳定，你也可以使用 XRay 或者 V2Ray 来替代 Clash
-
 <!--more-->
+
+虽然文章中用到了 Clash，但是只用到了它的自动切换节点功能，分流功能依旧由 Nftables 提供 *(理论上来说性能应该更好，但是没有测试过，目前已知 Clash 的规则命中需要 3~5ms，数据来自 Clash Premium 和 Clash Tracing)*，如果你的节点足够稳定，你也可以使用 XRay 或者 V2Ray 来替代 Clash
 
 ## 下载 Clash
 
