@@ -141,7 +141,7 @@ echo "define PRIVATE_IP = {
 }" | sudo tee /etc/nftables.conf.d/ip_private.nftsets
 ```
 
-设置 `/etc/nftables.conf`，下列配置仅对 `非CN IP`、`80/tcp` 和 `443/tcp` 生效
+设置 `/etc/nftables.conf`，下列配置仅对 `非CN IP`、`22/tcp`、`80/tcp` 和 `443/tcp` 生效
 
 ```groovy
 ...
@@ -156,7 +156,7 @@ table ip mangle {
 
     chain proxy {
         ip protocol != { tcp } return
-        tcp dport != { 80, 443 } return
+        tcp dport != { 22, 80, 443 } return
         ip daddr $CHINA_IP return
         ct mark & 0xf000 == 0x0000 jump tproxy_mark
         ct mark & 0xf000 != 0x0000 meta mark set ct mark
